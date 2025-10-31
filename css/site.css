@@ -37,3 +37,11 @@ img.responsive{max-width:100%;border-radius:12px;border:1px solid #214a3d}
   .grid2{grid-template-columns:1fr}
   .hero h1{font-size:32px}
 }
+/* Force smaller figure images in the GE section */
+.grid2 figure img,
+figure img.hero-figure {
+  width: min(56vw, 520px) !important;  /* 화면의 56% 또는 520px 중 작은 값 */
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
