@@ -146,14 +146,58 @@
 </section>
 
 <style>
-  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;}
-  .chip{
-    display:inline-block;padding:6px 10px;border:1px solid #d1d5db;border-radius:999px;
-    text-decoration:none;font-size:14px;line-height:1;color:#111;
+  /* make overall text light for dark background */
+  body, section, li, div, h1, em, a {
+    color: #e9fefc;
   }
-  .chip:hover{background:#111;color:#fff;border-color:#111;}
-  .chip-news{border-color:#2563eb;color:#1e3a8a;}
-  .chip-news:hover{background:#2563eb;color:#fff;border-color:#2563eb;}
+
+  /* container for the chips */
+  .chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  /* base chip button */
+  .chip {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid #7fffd4; /* mint border */
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1;
+    color: #aefdf2; /* mint text */
+    background: rgba(127, 255, 212, 0.08); /* subtle mint tint */
+    transition: all 0.2s ease;
+  }
+
+  /* hover effect for default chips */
+  .chip:hover {
+    background: #7fffd4;
+    color: #0b1e1d;
+    border-color: #7fffd4;
+  }
+
+  /* news chip with a slightly different aqua tone */
+  .chip-news {
+    border-color: #6ee7e7;
+    background: rgba(110, 231, 231, 0.15);
+    color: #b0ffff;
+  }
+
+  /* hover effect for news chip */
+  .chip-news:hover {
+    background: #6ee7e7;
+    color: #0a1a19;
+    border-color: #6ee7e7;
+  }
+
+  /* keep link hover color bright */
+  a:hover {
+    color: #7fffd4;
+  }
 </style>
 
 <footer class="container">
