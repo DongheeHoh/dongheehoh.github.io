@@ -24,27 +24,222 @@
   <p>My research focuses on photosynthetic regulation under real-world fluctuation toward resilient performance and practical impact. This page highlights only broad themes; please contact me directly for more details.</p>
 </header>
 
-<section class="container cards">
-  <div class="card">
-    <h3>Mechanisms under fluctuation</h3>
-    <p>Redox regulation and NPQ kinetics dynamics under changing light and temperature.</p>
+<section class="container research-ui" aria-label="Research overview and tabs">
+  <p class="intro">
+    My research aims to understand how genetic diversity and environmental fluctuations interact to shape photosynthetic resilience, with the goal of translating this understanding into improved crop performance and climate-resilient productivity.
+  </p>
+  <p class="intro-2">
+    To move toward this goal, my research tackles several key questions that remain open between fundamental mechanisms and real-world applications:
+  </p>
+
+  <div class="layout">
+    <!-- Left: Tabs + Panels (text-only tabs) -->
+    <div class="left">
+      <div class="tabs" role="tablist" aria-label="Research layers">
+        <button class="tab active" role="tab" aria-selected="true" aria-controls="pane-mech" id="tab-mech" data-tab="mech" data-layer="mechanistic">Mechanistic</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="pane-scale" id="tab-scale" data-tab="scale" data-layer="scaling">Scaling</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="pane-trans" id="tab-trans" data-tab="trans" data-layer="translational">Translational</button>
+      </div>
+
+      <div class="panes">
+        <!-- Mechanistic pane -->
+        <section class="pane active" role="tabpanel" id="pane-mech" aria-labelledby="tab-mech">
+          <h3>Mechanistic layer</h3>
+          <p class="muted">
+            Two complementary strategies using natural genetic diversity and field-like dynamic environments reveal hidden regulatory mechanisms that are not captured in static, mutant-based studies.
+          </p>
+
+          <!-- Figure (optional) -->
+          <figure class="research-fig">
+            <img src="assets/mech_overview.png" alt="Mechanistic overview figure">
+            <figcaption>Complementary approaches expose regulatory timing and coordination under real-world fluctuation.</figcaption>
+          </figure>
+
+          <!-- Links -->
+          <div class="chips">
+            <a class="chip chip-mech" href="https://doi.org/10.1093/jxb/eraf323" target="_blank" rel="noopener">JXB 2025 — LIgHT (DOI)</a>
+            <a class="chip chip-mech" href="https://doi.org/10.1111/pce.14789" target="_blank" rel="noopener">PCE 2024 — Redox (DOI)</a>
+            <a class="chip chip-mech" href="https://doi.org/10.1111/pce.14313" target="_blank" rel="noopener">PCE 2022 — Lipid/Chilling (DOI)</a>
+          </div>
+        </section>
+
+        <!-- Scaling pane -->
+        <section class="pane" role="tabpanel" id="pane-scale" aria-labelledby="tab-scale">
+          <h3>Scaling layer</h3>
+          <p class="muted">
+            Connecting second-scale regulation to season-long carbon gain and yield across temporal (seconds→seasons) and spatial (chloroplast→canopy) scales, including source–sink coordination.
+          </p>
+          <p class="contact">For details or collaboration inquiries, please contact me directly.</p>
+        </section>
+
+        <!-- Translational pane -->
+        <section class="pane" role="tabpanel" id="pane-trans" aria-labelledby="tab-trans">
+          <h3>Translational layer</h3>
+          <p class="muted">
+            Mechanism-informed prediction and climate-resilient improvement focused on stable performance under fluctuation.
+          </p>
+          <p class="contact">For details or collaboration inquiries, please contact me directly.</p>
+        </section>
+      </div>
+    </div>
+
+    <!-- Right: Questions (always visible, mapped to layers) -->
+    <aside class="right questions" aria-label="Broad research questions">
+      <h4>Broad research questions</h4>
+      <ul class="q-list">
+        <li data-layer="mechanistic" class="q active">
+          <span class="badge mech">Mechanistic</span>
+          How do plants maintain energy balance and resilience under fluctuating environments <em class="paren">(not static laboratory conditions)</em>?
+        </li>
+        <li data-layer="mechanistic" class="q active">
+          <span class="badge mech">Mechanistic</span>
+          How does natural genetic diversity shape the regulatory networks underlying photosynthetic responses <em class="paren">(not just single mutants)</em>?
+        </li>
+        <li data-layer="scaling" class="q">
+          <span class="badge scaling">Scaling</span>
+          How do rapid photosynthetic regulations scale over time and space — from chloroplast mechanisms to canopy productivity — to drive season-long carbon gain and yield?
+        </li>
+        <li data-layer="translational" class="q">
+          <span class="badge transl">Translational</span>
+          How can mechanistic understanding guide predictive modeling and climate-resilient crop improvement?
+        </li>
+      </ul>
+    </aside>
   </div>
-  <div class="card">
-    <h3>Natural genetic variation</h3>
-    <p>Using diverse populations to uncover regulatory components and their effects on energy balance.</p>
-  </div>
-  <div class="card">
-    <h3>From mechanism to prediction</h3>
-    <p>Spectroscopy‑informed modeling that links rapid regulation to larger‑scale performance.</p>
-  </div>
+
+  <p class="foot-note">For details or collaboration inquiries, please contact me directly.</p>
 </section>
-<!--
-<section class="container">
-  <h2>Selected visuals</h2>
-  <figure><img class="responsive" src="assets/hero.jpg" alt="Photosynthetic diversity visualization"></figure>
-  <p style="color:var(--muted)">Caption: Visual diversity of photosynthetic responses across lines.</p>
-</section>
--->
+
+<style>
+  .research-ui{margin-top:24px}
+  .intro,.intro-2{font-size:1.05rem;line-height:1.7;color:#f8fafc;margin:0 0 10px}
+  .layout{display:grid;grid-template-columns:1.35fr 1fr;gap:24px;align-items:start}
+  @media (max-width: 980px){
+    .layout{grid-template-columns:1fr;gap:18px}
+  }
+
+  /* Tabs (text-only, high contrast for dark bg) */
+  .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .tab{
+    appearance:none;background:transparent;border:2px solid #2dd4bf33;color:#e5e7eb;
+    border-radius:999px;padding:8px 14px;font-size:14px;cursor:pointer;
+    transition:background .15s ease, color .15s ease, border-color .15s ease, transform .04s ease;
+    outline: none;
+  }
+  .tab:hover{border-color:#2dd4bf66}
+  .tab:focus-visible{box-shadow:0 0 0 3px #0ea5a4aa;border-color:#2dd4bf}
+  .tab.active{
+    background:#14b8a6;color:#06231f;border-color:#14b8a6;
+  }
+
+  /* Panes */
+  .panes{background:#0b1220;border:1px solid #1f2937;border-radius:14px;padding:16px}
+  .pane{display:none}
+  .pane.active{display:block}
+  .pane h3{margin:0 0 8px 0;color:#ecfeff;font-size:1.1rem}
+  .muted{color:#dbeafe99}
+  .contact{margin-top:8px;color:#e5e7ebb3}
+
+  /* Figure */
+  .research-fig{margin:14px 0}
+  .research-fig img{width:100%;height:auto;border-radius:10px;border:1px solid #1f2937}
+  .research-fig figcaption{color:#9ca3af;font-size:.9rem;margin-top:6px}
+
+  /* Chips (links) */
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .chip{
+    display:inline-block;text-decoration:none;border-radius:999px;padding:7px 12px;font-size:13px;line-height:1;
+    border:1px solid #ffffff33;color:#e6fffb;
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .chip-mech{border-color:#2dd4bf;color:#a7f3d0}
+  .chip-mech:hover{background:#2dd4bf;color:#06231f;border-color:#2dd4bf}
+
+  /* Questions block */
+  .questions{background:#0b1220;border:1px solid #1f2937;border-radius:14px;padding:16px}
+  .questions h4{margin:0 0 10px 0;color:#ecfeff}
+  .q-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .q{color:#e5e7eb;line-height:1.6;position:relative;padding-left:0}
+  .q .paren{font-style:italic;color:#cbd5e1}
+  /* Highlight by layer */
+  .q{opacity:.6}
+  .q.active{opacity:1}
+
+  /* Badges (layer labels) */
+  .badge{font-size:12px;padding:2px 8px;border-radius:999px;margin-right:8px;border:1px solid transparent}
+  .badge.mech{background:#0f766e;color:#e6fffb;border-color:#14b8a6}
+  .badge.scaling{background:#5b21b6;color:#f3e8ff;border-color:#a78bfa}
+  .badge.transl{background:#7f1d1d;color:#ffe4e6;border-color:#f87171}
+
+  /* Foot note */
+  .foot-note{margin-top:14px;color:#e5e7ebb3}
+
+  /* Left vs Right columns */
+  .left{}
+  .right{}
+</style>
+
+<script>
+  // tab switching + question highlighting
+  (function(){
+    const tabs = document.querySelectorAll('.tabs .tab');
+    const panes = {
+      mech: document.getElementById('pane-mech'),
+      scale: document.getElementById('pane-scale'),
+      trans: document.getElementById('pane-trans')
+    };
+    const questions = document.querySelectorAll('.q-list .q');
+
+    function setActive(layerKey){
+      // tabs
+      tabs.forEach(b=>{
+        const on = b.dataset.tab === layerKey;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      // panes
+      Object.entries(panes).forEach(([k,el])=>{
+        el.classList.toggle('active', k===layerKey);
+      });
+      // highlight questions mapped to this layer
+      questions.forEach(li=>{
+        const qLayer = li.dataset.layer;
+        li.classList.toggle('active', 
+          (layerKey==='mech' && qLayer==='mechanistic') ||
+          (layerKey==='scale' && qLayer==='scaling') ||
+          (layerKey==='trans' && qLayer==='translational')
+        );
+      });
+    }
+
+    tabs.forEach(btn=>{
+      btn.addEventListener('click', ()=> setActive(btn.dataset.tab));
+      btn.addEventListener('keydown', (e)=>{
+        // arrow key nav
+        const order = ['tab-mech','tab-scale','tab-trans'];
+        const idx = order.indexOf(btn.id);
+        if(e.key==='ArrowRight'){ const n = document.getElementById(order[(idx+1)%3]); n.focus(); }
+        if(e.key==='ArrowLeft'){ const p = document.getElementById(order[(idx+2)%3]); p.focus(); }
+      });
+    });
+
+    // click question = jump to its tab
+    questions.forEach(li=>{
+      li.addEventListener('click', ()=>{
+        const layer = li.dataset.layer;
+        const map = {mechanistic:'mech', scaling:'scale', translational:'trans'};
+        const key = map[layer] || 'mech';
+        setActive(key);
+        const btn = document.querySelector(`.tab[data-tab="${key}"]`);
+        btn && btn.focus();
+      });
+      li.style.cursor = 'pointer';
+    });
+
+    // init
+    setActive('mech');
+  })();
+</script>
 
 <footer class="container">
   <div>© 2025 Donghee Hoh. ORCID: <a href="https://orcid.org/0000-0002-0221-6484">0000-0002-0221-6484</a></div>
