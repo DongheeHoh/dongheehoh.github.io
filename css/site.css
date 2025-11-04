@@ -15,7 +15,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0
 nav .brand{font-weight:800;letter-spacing:.4px}
 nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0}
 .hero{
-  background:linear-gradient(180deg, rgba(9,27,20,.7), rgba(9,27,20,.9)), url('../assets/hero.jpg') center/cover no-repeat;
+  background:linear-gradient(180deg, rgba(9,27,20,.7), rgba(9,27,20,.9)), url('../assets/Main.png') center/cover no-repeat;
   border-radius:18px;
   padding:80px 28px;
   margin:8px 0 28px;
@@ -44,4 +44,8 @@ figure img.hero-figure {
   height: auto !important;
   display: block;
   margin: 0 auto;
+}
+/* Hide brand name only on the home page */
+.home nav .brand {
+  display: none;
 }
