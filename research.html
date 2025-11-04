@@ -18,12 +18,7 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
-<!—
-<header class="container">
-  <h1>Research</h1>
-  <p>My research focuses on photosynthetic regulation under real-world fluctuation toward resilient performance and practical impact. This page highlights only broad themes; please contact me directly for more details.</p>
-</header>
--->
+
 <section class="container research-ui" aria-label="Research overview and tabs">
   <p class="intro">
     My research aims to understand how genetic diversity and environmental fluctuations interact to shape photosynthetic resilience, with the goal of translating this understanding into improved crop performance and climate-resilient productivity.
@@ -33,7 +28,7 @@
   </p>
 
   <div class="layout">
-    <!-- Left: Tabs + Panels (text-only tabs) -->
+    <!-- Left: Tabs + Panels -->
     <div class="left">
       <div class="tabs" role="tablist" aria-label="Research layers">
         <button class="tab active" role="tab" aria-selected="true" aria-controls="pane-mech" id="tab-mech" data-tab="mech" data-layer="mechanistic">Mechanistic</button>
@@ -49,16 +44,16 @@
             Two complementary strategies using natural genetic diversity and field-like dynamic environments reveal hidden regulatory mechanisms that are not captured in static, mutant-based studies.
           </p>
 
-         <!-- Figure (now animated) -->
-<figure class="research-fig">
-  <video class="auto-vid"
-         src="assets/GEapproach.mp4"
-         autoplay
-         muted
-         loop
-         playsinline></video>
-  <figcaption>These approaches not only challenge canonical models but also reveal how plants sustain energy balance and resilience under real-world fluctuations.</figcaption>
-</figure>
+          <!-- Figure (animated video) -->
+          <figure class="research-fig">
+            <video class="auto-vid"
+                   src="assets/GEapproach.mp4"
+                   autoplay
+                   muted
+                   loop
+                   playsinline></video>
+            <figcaption>These approaches not only challenge canonical models but also reveal how plants sustain energy balance and resilience under real-world fluctuations.</figcaption>
+          </figure>
 
           <!-- Links -->
           <div class="chips">
@@ -88,7 +83,7 @@
       </div>
     </div>
 
-    <!-- Right: Questions (always visible, mapped to layers) -->
+    <!-- Right: Questions -->
     <aside class="right questions" aria-label="Broad research questions">
       <h4>Broad research questions</h4>
       <ul class="q-list">
@@ -123,7 +118,7 @@
     .layout{grid-template-columns:1fr;gap:18px}
   }
 
-  /* Tabs (text-only, high contrast for dark bg) */
+  /* --- Tabs (text-only, high contrast for dark background) --- */
   .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
   .tab{
     appearance:none;background:transparent;border:2px solid #2dd4bf33;color:#e5e7eb;
@@ -137,7 +132,7 @@
     background:#14b8a6;color:#06231f;border-color:#14b8a6;
   }
 
-  /* Panes */
+  /* --- Panes --- */
   .panes{background:#0b1220;border:1px solid #1f2937;border-radius:14px;padding:16px}
   .pane{display:none}
   .pane.active{display:block}
@@ -145,12 +140,36 @@
   .muted{color:#dbeafe99}
   .contact{margin-top:8px;color:#e5e7ebb3}
 
-  /* Figure */
+  /* --- Figure --- */
   .research-fig{margin:14px 0}
-  .research-fig img{width:100%;height:auto;border-radius:10px;border:1px solid #1f2937}
+  .research-fig img{
+    width:100%;
+    height:auto;
+    border-radius:10px;
+    border:1px solid #1f2937;
+  }
+
+  /* --- Video (responsive + size control) --- */
+  .research-fig video {
+    width: 100%;        /* Responsive width */
+    max-width: 600px;   /* Prevent oversized video on desktop or mobile */
+    height: auto;       /* Keep original aspect ratio */
+    display: block;     /* Allow centering with margin auto */
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid #1f2937;
+  }
+
+  /* --- Mobile fine-tuning for narrow screens --- */
+  @media (max-width: 420px){
+    .research-fig video {
+      max-width: 520px;
+    }
+  }
+
   .research-fig figcaption{color:#9ca3af;font-size:.9rem;margin-top:6px}
 
-  /* Chips (links) */
+  /* --- Chips (links) --- */
   .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
   .chip{
     display:inline-block;text-decoration:none;border-radius:999px;padding:7px 12px;font-size:13px;line-height:1;
@@ -160,32 +179,27 @@
   .chip-mech{border-color:#2dd4bf;color:#a7f3d0}
   .chip-mech:hover{background:#2dd4bf;color:#06231f;border-color:#2dd4bf}
 
-  /* Questions block */
+  /* --- Questions block --- */
   .questions{background:#0b1220;border:1px solid #1f2937;border-radius:14px;padding:16px}
   .questions h4{margin:0 0 10px 0;color:#ecfeff}
   .q-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
   .q{color:#e5e7eb;line-height:1.6;position:relative;padding-left:0}
   .q .paren{font-style:italic;color:#cbd5e1}
-  /* Highlight by layer */
   .q{opacity:.6}
   .q.active{opacity:1}
 
-  /* Badges (layer labels) */
+  /* --- Badges (layer labels) --- */
   .badge{font-size:12px;padding:2px 8px;border-radius:999px;margin-right:8px;border:1px solid transparent}
   .badge.mech{background:#0f766e;color:#e6fffb;border-color:#14b8a6}
   .badge.scaling{background:#5b21b6;color:#f3e8ff;border-color:#a78bfa}
   .badge.transl{background:#7f1d1d;color:#ffe4e6;border-color:#f87171}
 
-  /* Foot note */
+  /* --- Foot note --- */
   .foot-note{margin-top:14px;color:#e5e7ebb3}
-
-  /* Left vs Right columns */
-  .left{}
-  .right{}
 </style>
 
 <script>
-  // tab switching + question highlighting
+  // Tab switching + question highlighting
   (function(){
     const tabs = document.querySelectorAll('.tabs .tab');
     const panes = {
@@ -196,17 +210,17 @@
     const questions = document.querySelectorAll('.q-list .q');
 
     function setActive(layerKey){
-      // tabs
+      // Tabs
       tabs.forEach(b=>{
         const on = b.dataset.tab === layerKey;
         b.classList.toggle('active', on);
         b.setAttribute('aria-selected', on ? 'true' : 'false');
       });
-      // panes
+      // Panes
       Object.entries(panes).forEach(([k,el])=>{
         el.classList.toggle('active', k===layerKey);
       });
-      // highlight questions mapped to this layer
+      // Highlight questions mapped to this layer
       questions.forEach(li=>{
         const qLayer = li.dataset.layer;
         li.classList.toggle('active', 
@@ -220,7 +234,6 @@
     tabs.forEach(btn=>{
       btn.addEventListener('click', ()=> setActive(btn.dataset.tab));
       btn.addEventListener('keydown', (e)=>{
-        // arrow key nav
         const order = ['tab-mech','tab-scale','tab-trans'];
         const idx = order.indexOf(btn.id);
         if(e.key==='ArrowRight'){ const n = document.getElementById(order[(idx+1)%3]); n.focus(); }
@@ -228,7 +241,6 @@
       });
     });
 
-    // click question = jump to its tab
     questions.forEach(li=>{
       li.addEventListener('click', ()=>{
         const layer = li.dataset.layer;
@@ -241,7 +253,6 @@
       li.style.cursor = 'pointer';
     });
 
-    // init
     setActive('mech');
   })();
 </script>
