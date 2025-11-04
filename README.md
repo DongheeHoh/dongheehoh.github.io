@@ -1,12 +1,12 @@
+# Donghee Hoh — Research Website
 
-# Donghee Hoh — Personal Site
+This is my personal academic website hosted on GitHub Pages.  
+I built it to share my research on photosynthetic regulation, natural genetic diversity, and plant resilience.
 
-This repository hosts a simple academic website designed for GitHub Pages.
+## How to deploy
+1. Create a repository named `<username>.github.io`, or use an existing repo with GitHub Pages enabled on the `main` branch.  
+2. Upload the website files to the repository.  
+3. Edit text in `index.html`, `research.html`, `publications.html`, and `contact.html` as needed.  
+4. Replace or update images in the `assets/` folder (for example, `assets/Main2.png` for the homepage background).
 
-## Deploy
-1) Create a repo named `<username>.github.io` or any repo and enable GitHub Pages on `main`.
-2) Upload the files in this folder.
-3) Customize text in `index.html`, `research.html`, `publications.html`, `contact.html`.
-4) Replace `assets/hero.jpg` with your own image or GIF.
-
-Colors and layout live in `css/site.css`.
+The overall style and color theme can be customized in `css/site.css`.
